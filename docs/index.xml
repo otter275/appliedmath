@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Slumdown</title>
@@ -6,10 +6,23 @@
     <description>Recent content in Home on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A very waffly post about waffles</title>
+      <link>/post/a-very-waffly-post-about-waffles/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-very-waffly-post-about-waffles/</guid>
+      <description> I want to talk about waffles. But the truth is that I actually don’t know that mch about waffles. Here are somethings I don’t know:
+ this that anything else  Level 1 heading Level 2 heading Level 3 heading this that anything else  this is italicised this is boldfaced
+ image  link Placekitten
+\[ a^2 + b^2 = c^2 \]
+   </description>
+    </item>
     
     <item>
       <title>Tutorial part 1: Getting started</title>
