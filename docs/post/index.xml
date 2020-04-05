@@ -25,6 +25,18 @@
     </item>
     
     <item>
+      <title>단순회귀분석 01</title>
+      <link>/post/using-r-markdown/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/using-r-markdown/</guid>
+      <description>단순회귀모델에 대한 회귀함수 추정 이번 포스팅에서는 가장 중요한 시작이 되는 단순회귀모델 자체에 대해서 살펴 보겠습니다.
+1. 단순회귀모델 1.1 모델의 형태 단순회귀모델의 형태는 다음과 같습니다. \[ y_i = \beta_0 + \beta_1x_i + \epsilon_i\]
+ 1.2 모델의 각 항에 대한 설명  \(y_i\)는 \(i\)번째 trial에 대한 응답(종속)변수입니다. \(\beta_0\) 과 \(\beta_1\)는 모수입니다. \(x_i\)는 알고 있는 상수로 \(i\)번째 trial에 대한 예측(독립)변수입니다.  \(\epsilon_i\)는 random error항인데 확률변수입니다. 그리고 다음의 내용을 가정합니다.
+ \(E[\epsilon_i]\) = 0 \(\sigma^2[\epsilon_i]=\sigma^2\) \(\epsilon_i\) 와 \(\epsilon_j\)는 비상관입니다.</description>
+    </item>
+    
+    <item>
       <title>Tutorial part 1: Getting started</title>
       <link>/post/getting-started/</link>
       <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>

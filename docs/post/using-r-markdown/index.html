@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>단순회귀분석 01 | Applied Math</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="단순회귀분석 01">
+<meta property="og:description" content="단순회귀모델에 대한 회귀함수 추정 이번 포스팅에서는 가장 중요한 시작이 되는 단순회귀모델 자체에 대해서 살펴 보겠습니다.
+1. 단순회귀모델 1.1 모델의 형태 단순회귀모델의 형태는 다음과 같습니다. \[ y_i = \beta_0 &#43; \beta_1x_i &#43; \epsilon_i\]
+ 1.2 모델의 각 항에 대한 설명  \(y_i\)는 \(i\)번째 trial에 대한 응답(종속)변수입니다. \(\beta_0\) 과 \(\beta_1\)는 모수입니다. \(x_i\)는 알고 있는 상수로 \(i\)번째 trial에 대한 예측(독립)변수입니다.  \(\epsilon_i\)는 random error항인데 확률변수입니다. 그리고 다음의 내용을 가정합니다.
+ \(E[\epsilon_i]\) = 0 \(\sigma^2[\epsilon_i]=\sigma^2\) \(\epsilon_i\) 와 \(\epsilon_j\)는 비상관입니다.">
+<meta property="og:image" content="https://otter275.github.io/appliedmath/header/slumdown.png">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>단순회귀분석 01</h1>
+  <h3>
+    by Matt, 05 Apr 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<div id="단순회귀모델에-대한-회귀함수-추정" class="section level1">
+<h1>단순회귀모델에 대한 회귀함수 추정</h1>
+<p>이번 포스팅에서는 가장 중요한 시작이 되는 단순회귀모델 자체에 대해서 살펴 보겠습니다.</p>
+<div id="단순회귀모델" class="section level2">
+<h2>1. 단순회귀모델</h2>
+<div id="모델의-형태" class="section level4">
+<h4>1.1 모델의 형태</h4>
+<p>단순회귀모델의 형태는 다음과 같습니다.
+<span class="math display">\[ y_i = \beta_0 + \beta_1x_i + \epsilon_i\]</span></p>
+</div>
+<div id="모델의-각-항에-대한-설명" class="section level4">
+<h4>1.2 모델의 각 항에 대한 설명</h4>
+<ul>
+<li><span class="math inline">\(y_i\)</span>는 <span class="math inline">\(i\)</span>번째 trial에 대한 응답(종속)변수입니다.</li>
+<li><span class="math inline">\(\beta_0\)</span> 과 <span class="math inline">\(\beta_1\)</span>는 모수입니다.</li>
+<li><span class="math inline">\(x_i\)</span>는 알고 있는 상수로 <span class="math inline">\(i\)</span>번째 trial에 대한 예측(독립)변수입니다.</li>
+</ul>
+<p><span class="math inline">\(\epsilon_i\)</span>는 random error항인데 확률변수입니다. 그리고 다음의 내용을 가정합니다.</p>
+<ul>
+<li><span class="math inline">\(E[\epsilon_i]\)</span> = 0</li>
+<li><span class="math inline">\(\sigma^2[\epsilon_i]=\sigma^2\)</span></li>
+<li><span class="math inline">\(\epsilon_i\)</span> 와 <span class="math inline">\(\epsilon_j\)</span>는 비상관입니다. 그러므로 <span class="math inline">\(\epsilon_i\)</span> 와 <span class="math inline">\(\epsilon_j\)</span>의 공분산은 0입니다. 예를들어 <span class="math inline">\(\sigma[\epsilon_i,\epsilon_j] = 0\)</span>, <span class="math inline">\(i\neq j\)</span></li>
+</ul>
+</div>
+</div>
+<div id="단순회귀모델에-대한-기댓값과-분산" class="section level2">
+<h2>2. 단순회귀모델에 대한 기댓값과 분산</h2>
+<p>선형성과 모델에 대한 가정에 의해
+<span class="math display">\[E[y_i] = E[\beta_0 + \beta_1x_i + \epsilon_i] = \beta_0 + \beta_1x_i + E[\epsilon_i] = \beta_0 + \beta_1x_i\]</span></p>
+<p>여기서 <span class="math inline">\(E[y_i] = \beta_0 + \beta_1x_i\)</span> 가 바로 단순회귀모델에 대한 회귀함수입니다.</p>
+<p><span class="math display">\[\sigma^2[y_i] = \sigma^2[\beta_0 + \beta_1x_i + \epsilon_i] = \sigma^2\]</span></p>
+</div>
+<div id="모델에-대한-주요-포인트" class="section level2">
+<h2>3. 모델에 대한 주요 포인트</h2>
+<ul>
+<li>단순회귀모델인 <span class="math inline">\(y_i = \beta_0 + \beta_1x_i + \epsilon_i\)</span>는 수학적 함수관계(인과관계)가 아닌 통계적 관계입니다.</li>
+<li>단순회귀모델이 통계적 관계인 이유는 <span class="math inline">\(\epsilon_i\)</span>가 확률변수 이며 그로 인해서 단순회귀모델 자체가 확률변수이기 때문입니다.</li>
+<li><span class="math inline">\(\epsilon_i\)</span> 와 <span class="math inline">\(\epsilon_j\)</span>가 비상관이기 때문에 <span class="math inline">\(y_i\)</span>와 <span class="math inline">\(y_j\)</span>도 비상관입니다. 또한 이 것은 단순회귀모델인 <span class="math inline">\(y_i\)</span> 항 역시 <span class="math inline">\(\epsilon_i\)</span>항과 마찬가지로 확률변수 임을 의미합니다.</li>
+<li>즉, 이것은 2.번에서 유도된 내용에 의해 응답변수 <span class="math inline">\(y_i\)</span>에 대한 확률분포함수의 평균은 <span class="math inline">\(E[y_i] = \beta_0 + \beta_1x_i\)</span> 이며 분산은 <span class="math inline">\(\sigma^2\)</span> 입니다.</li>
+<li>모든 <span class="math inline">\(x_i\)</span> trial에 대해서 분산이 <span class="math inline">\(\sigma^2\)</span>로 일정하며 <span class="math inline">\(E[y_i]\)</span>는 <span class="math inline">\(x_i\)</span> trial 마다 값이 같거나 다를 수 있습니다.(일반적으로 값이 다릅니다.)</li>
+<li>임의의 <span class="math inline">\(y_i\)</span> 와 <span class="math inline">\(y_j\)</span>에 대해서 언제나 비상관입니다.</li>
+</ul>
+</div>
+<div id="예제" class="section level2">
+<h2>4. 예제</h2>
+<p>어떤 학교의 학생의 수학 공부 시간과 점수에 대한 단순회귀모델이 다음과 같다고 가정 해 보겠습니다. <span class="math display">\[ y_i = 10+ 20x_i + \epsilon_i\]</span>
+이 모델에서 x는 공부한 시간(단위 한시간), y는 점수를 나타냅니다.</p>
+<p>그러면 모델로 부터 다음과 같은 회귀함수를 얻을 수 있습니다.(2.번 참조)
+<span class="math display">\[E[y_i] = 10+ 20x_i\]</span></p>
+<p>이 때 i번째 에 대응되는 <span class="math inline">\(x,y\)</span> 데이터 값을 <span class="math inline">\(x_i = 2\)</span>와 <span class="math inline">\(y_i = 55\)</span> 라고 가정 하겠습니다.
+이 때 회귀함수로 얻을 수 있는 값은 <span class="math display">\[E[y_i] = 10+ 20*(2) = 50\]</span> 과 같으므로 이 때의 error term 값 <span class="math inline">\(\epsilon_i\)</span> = 5 입니다. 이것을 회귀모델로 다시 표현해 보면
+<span class="math display">\[ y_i = 10 + 20*(2) + 5 = 55 \]</span> 입니다.</p>
+<p>즉, <span class="math inline">\(Y_i=55\)</span> 이며 <span class="math inline">\(E[Y_i] = 50\)</span> 입니다. 자연스럽게 <span class="math inline">\(\epsilon_i = Y_i - E[Y_i]\)</span> 관계를 확인 할 수 있습니다. <span class="math inline">\(\epsilon_i\)</span>를 오차(Error)라고 부릅니다.</p>
+</div>
+<div id="회귀모델에서-모수와-변수의-의미" class="section level2">
+<h2>5. 회귀모델에서 모수와 변수의 의미</h2>
+<ul>
+<li>회귀모델에서 <span class="math inline">\(\beta_0\)</span> 와 <span class="math inline">\(\beta_1\)</span>을 회귀계수 라고 부릅니다.</li>
+<li><span class="math inline">\(\beta_1\)</span>은 회귀함수에서의 기울기입니다. 그렇기 때문에 이것은 x의 단위 증가분 당 y에 대한 확률분포의 평균의 변화량을 나타 냅니다.</li>
+<li><span class="math inline">\(\beta_0\)</span>는 회귀함수의 <span class="math inline">\(y\)</span>절편입니다. 회귀모델의 범위가 <span class="math inline">\(x=0\)</span>을 포함 하고 있을 때 <span class="math inline">\(x=0\)</span>에서의 <span class="math inline">\(y\)</span>에 대한 확률분포의 평균이 <span class="math inline">\(\beta_0\)</span>입니다.</li>
+</ul>
+<p>다시 4.의 회귀함수를 보겠습니다. <span class="math display">\[E[y] = 10+ 20x = 50\]</span></p>
+<ul>
+<li><span class="math inline">\(\beta_1\)</span> = 20은 한 시간 공부 했을 때(즉, x의 단위) 20점에 대한 y의 확률분포의 평균의 증가량을 의미합니다.</li>
+<li><span class="math inline">\(\beta_0\)</span> = 10은 0 시간 공부 했을 때(즉, x의 단위) 10점에 대한 y의 확률분포의 평균을 의미 합니다. 하지만 회귀함수를 생성하기 위한 x데이터의 범위(scope)가 0을 제외한 양수값 이라면 <span class="math inline">\(\beta_0\)</span>의 본질적으로 현실에서의 어떠한 의미를 반영하지 않습니다.(이 회귀모델에서는 학생들이 최소 0시간을 초과해서 공부한 상황)</li>
+</ul>
+<p>다음 포스팅에서는 이 내용에 이어서 Alternative Versions of Regression Model과 회귀함수의 추정에 대해서 알아 보겠습니다.</p>
+<p>===================================================================================================
+정상적인 공유기능을 활용한 공유가 아닌 화면 캡쳐 및 강제로 복사 및 붙여 넣기 식의 공유를 일체 하지 말아 주세요. 출처를 밝힌다고 해도 화면 캡쳐 및 강제로 복사 및 붙여 넣기 식의 공유를 절대 금지합니다.</p>
+<p>정상적인 공유기능을 활용한 공유는 컨텐츠 제작자들이 계속해서 컨텐츠를 생성 하는데 큰 도움이 됩니다.</p>
+</div>
+</div>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © [Matt Lee] | <a href="https://www.facebook.com/otter275">Facebook</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>
