@@ -1,0 +1,38 @@
+---
+title: A very waffly post about waffles
+author: Matt
+date: '2020-04-05'
+slug: a-very-waffly-post-about-waffles
+categories: []
+tags: []
+---
+
+I want to talk about waffles. But the truth is that I actually don't know
+that mch about waffles. Here are somethings I don't know:
+
+- this
+- that
+- anything else
+
+# Level 1 heading
+## Level 2 heading
+### Level 3 heading
+
+1. this
+2. that
+3. anything else
+
+this is *italicised*
+this is **boldfaced**
+
+
+### image
+![](https://placekitten.com/400/400)
+
+
+### link
+[Placekitten](https://placekitten.com)
+
+$$
+a^2 + b^2 = c^2
+$$
