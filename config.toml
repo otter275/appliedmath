@@ -9,7 +9,7 @@
 # GitHub pages the way I've done for the example site at
 # https://djnavarro.github.io/hugo-slum/, then you can do something
 # like this:
-baseurl = "/hugo-slum/"
+baseurl = "/appliedmath/"
 
 
 
@@ -26,7 +26,7 @@ publishDir = "docs"
 
 # These settings specify the title for your blog, and the name of
 # the Hugo theme that it uses.
-title = "Slumdown"
+title = "Applied Math"
 theme = "hugo-slum"
 
 
@@ -81,14 +81,16 @@ footnotereturnlinkcontents = "↩"
     name = "Posts"
     url = "/post/"
     weight = 3
-[[menu.main]]
-    name = "Projects"
-    url = "/project/"
-    weight = 4
-[[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 5
+
+#[[menu.main]]
+#    name = "Projects"
+#    url = "/project/"
+#    weight = 3
+    
+#[[menu.main]]
+#    name = "Tags"
+#    url = "/tags/"
+#    weight = 5
 
 
 
@@ -109,8 +111,8 @@ footnotereturnlinkcontents = "↩"
 # - "footer" contents
 [params]
     siteHeader = "header/mpg_dark.png"
-    siteProfile = "header/my_profile.png"
-    twitterImage = "https://djnavarro.github.io/hugo-slum/header/slumdown.png"
+    siteProfile = "header/siteHeader_otter.jpg"
+    twitterImage = "https://otter275.github.io/appliedmath/header/slumdown.png"
     colourScheme = "css/palette_dark.css"
-    description = "A website built using slumdown."
-    footer = "&copy; [Danielle Navarro](https://djnavarro.net) 2018--2019 | [Github](https://github.com/djnavarro) | [Twitter](https://twitter.com/djnavarro)"
+    description = "A blog about applid math."
+    footer = "&copy; [Matt Lee] | [Facebook](https://www.facebook.com/otter275)"
